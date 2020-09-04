@@ -1,0 +1,40 @@
+
+; (define (compare x y)
+  
+; ;BEGIN CONDITIONAL
+;   ( cond
+;    ; if x == y, return x
+;    		[((equals? x y) x)]
+
+;    ; if both are bools
+;    		[(and (boolean? x)(boolean? y)))
+;   			(if x '% '(not %))
+; 		]
+
+;    ; if any of these apply:
+;    [
+;    (or
+;    ; if they are different keywords
+;    		( )
+
+;    ; if one is a list and the other isnt'
+;    		( )
+
+;    ; if they are unequal lists
+;    		( )
+;    ; if they start with '
+;    )
+;    (list 'if '% x y)
+;    ]
+;    	)
+;   ; END CONDITIONAL
+; )
+
+
+(define (compare x y) 
+	(cond 
+		[((equals? x y) x)]
+
+		[]
+
+		))

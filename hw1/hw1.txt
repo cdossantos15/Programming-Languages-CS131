@@ -1,0 +1,16 @@
+I solved this problem by first breaking it up into many different pieces.
+My strategy was to use multiple functions that I would call in filter_reachable.
+I did it this way so that I could focus on small parts of the project
+and then put all the pieces together rather than focus on one main function.
+filter_reachable itself is not a recursive function, but I created
+the other functions to be recursive. At a high level, the main idea behind
+finding the reachable rules was:
+separate the start symbol and the list of rules from g ->
+from the list of rules, generate a list of reachable Nonterminals ->
+from these Nonterminals, go through the grammar and only add
+the rules that have that Nonterminal.
+Although the function appears to filter rules correctly, one major
+downfall is that it is not efficient. I would have liked to create
+one recursive function that does not repeat steps, but unfortunately I
+rejected this approach because I could not find a good way of doing it that I
+could wrap my head around.

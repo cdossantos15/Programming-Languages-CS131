@@ -1,0 +1,81 @@
+CS131 HW3 Tests
+
+1)
+
+Synch
+
+java UnsafeMemory BetterSafe 1 10000 127 2 4 6 8 10;
+java UnsafeMemory BetterSafe 2 10000 127 2 4 6 8 10;
+java UnsafeMemory BetterSafe 4 10000 127 2 4 6 8 10;
+java UnsafeMemory BetterSafe 8 10000 127 2 4 6 8 10;
+java UnsafeMemory BetterSafe 16 10000 127 2 4 6 8 10;
+
+java UnsafeMemory BetterSafe 1 100000 127 2 4 6 8 10;
+java UnsafeMemory BetterSafe 2 100000 127 2 4 6 8 10;
+java UnsafeMemory BetterSafe 4 100000 127 2 4 6 8 10;
+java UnsafeMemory BetterSafe 8 100000 127 2 4 6 8 10;
+java UnsafeMemory BetterSafe 16 100000 127 2 4 6 8 10;
+
+
+java UnsafeMemory BetterSafe 1 1000000 127 2 4 6 8 10;
+java UnsafeMemory BetterSafe 2 1000000 127 2 4 6 8 10;
+java UnsafeMemory BetterSafe 4 1000000 127 2 4 6 8 10;
+java UnsafeMemory BetterSafe 8 1000000 127 2 4 6 8 10;
+java UnsafeMemory BetterSafe 16 1000000 127 2 4 6 8 10
+
+Unsych
+
+
+
+
+
+
+
+** SYNC WINS**
+java UnsafeMemory BetterSafe 8 1000000 6 5 6 3 0 3
+Threads average 2593.77 ns/transition
+
+java UnsafeMemory BetterSafe 8 1000000 6 5 6 3 0 3
+Threads average 2311.04 ns/transition
+
+java UnsafeMemory UnBetterSafe 8 1000000 6 5 6 3 0 3
+-> caused a hang because it was in an infinite loop
+
+
+2)
+** SYNC WINS **
+java UnsafeMemory BetterSafe 8 1000000 100 5 6 3 0 3
+Threads average 2752.22 ns/transition
+
+java UnsafeMemory BetterSafe 8 1000000 100 5 6 3 0 3
+Threads average 2148.13 ns/transition
+
+java UnsafeMemory Unynchronized 8 1000000 100 5 6 3 0 3
+Threads average 2289.62 ns/transition
+sum mismatch (17 != 295)
+
+3)
+
+java UnsafeMemory BetterSafe 8 500000 100 5 6 3 0 3
+Threads average 3379.20 ns/transition
+
+java UnsafeMemory BetterSafe 8 500000 100 5 6 3 0 3
+Threads average 2258.63 ns/transition
+
+java UnsafeMemory UnBetterSafe 8 500000 100 5 6 3 0 3
+sum mismatch (17 != 199)
+
+4)
+
+java UnsafeMemory BetterSafe 8 500000 100 5 6 3 0 3 5 4 3 6 2 1
+Threads average 3379.20 ns/transition
+
+java UnsafeMemory BetterSafe 8 500000 100 5 6 3 0 3
+Threads average 2258.63 ns/transition
+
+java UnsafeMemory UnBetterSafe 8 500000 100 5 6 3 0 3
+sum mismatch (17 != 199)
+
+
+
+

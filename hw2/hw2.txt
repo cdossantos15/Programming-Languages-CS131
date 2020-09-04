@@ -1,0 +1,18 @@
+For this homework, I based some of my implementation on the previous HW2 solution in which I have two functions that work together and are called in "make_matcher". They are mutually recursive and are able to call each other to obtain information about symbols and their rules.
+My match_or function takes all the rules for one specific symbol, and passes them into
+match_and. Match_and then tries to match a rule at a time. For example, if [N Term; N Binop; N Expr] was passed in, then it would make sure that it can match Term, Binop, and Expr. Match_and
+would also call match_or throughout to start the process and again and recurse through more
+expressions that need to be matched.
+
+Make_parser was more difficult for me, and I was not able to implement it.
+My inital plan to implement it was using my make_matcher function. My plan was to create a derivation list in match_maker while it recursed through the fragment that I could use in
+make_parser. I would then take the derivation list and turn it into a tree.
+I created an acceptor wrapper function that wraps the initial acceptor that is
+passed in so that I could also pass in a list when
+I called it myself. I modified match_and and match_or so that they would append the
+"nodes" that were found as it went through the fragment. My match_and and match_or
+functions do this correctly. The part of the problem that I was not able to implement
+was going through the derivation list and turning it into a tree. I could see the
+pattern, but my function was not working once it hit a certain point in the recursion.
+My implementations have weaknesses. It would definitely not work with grammars that cause an infinite loop, such as those that
+are recursive from the left.
